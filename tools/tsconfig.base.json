@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "inlineSources": true,
+        "rootDir": "../CamlJs",
+        "forceConsistentCasingInFileNames": true,
+        "noEmitOnError": true,
+        "declaration": true,
+        "lib": [ "dom", "es5", "es6", "scripthost" ]
+    },
+    "files": [
+        "../CamlJs/camljs.ts"
+    ]
+}
