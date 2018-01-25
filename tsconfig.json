@@ -4,7 +4,7 @@
         "module": "amd",
         "sourceMap": true,
         "inlineSources": true,
-        "outDir": "bin",
+        "outDir": "dist",
         "rootDir": "CamlJs",
         "forceConsistentCasingInFileNames": true,
         "noResolve": false,
