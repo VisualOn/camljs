@@ -8,3 +8,5 @@ pkgobj
 /packages/*
 /.vs/*
 node_modules
+dist
+*.tgz
