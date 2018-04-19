@@ -172,7 +172,7 @@ module CamlBuilder {
         /** Specifies that a condition will be tested against the field with the specified internal name, and the type of this field is ModStat (moderation status) */
         ModStatField(internalName: string): IModStatFieldExpression;
         /** Used in queries for retrieving recurring calendar events.
-            NOTICE: DateRangesOverlap with overlapType other than Now cannot be used with SP.CamlQuery, because it doesn't support 
+            NOTICE: DateRangesOverlap with overlapType other than Now cannot be used with SP.CamlQuery, because it doesn't support
             CalendarDate and ExpandRecurrence query options. Lists.asmx, however, supports them, so you can still use DateRangesOverlap
             with SPServices.
             @param overlapType Defines type of overlap: return all events for a day, for a week, for a month or for a year
@@ -223,9 +223,9 @@ module CamlBuilder {
         IsNull(): IExpression;
         /** Checks whether the value of the field was not specified by user */
         IsNotNull(): IExpression;
-        
+
         // Date overloads
-        
+
         /** Checks whether the value of the field is equal to the specified value */
         EqualTo(value: Date): IExpression;
         /** Checks whether the value of the field is not equal to the specified value */
@@ -240,9 +240,9 @@ module CamlBuilder {
         LessThanOrEqualTo(value: Date): IExpression;
         /** Checks whether the value of the field is equal to one of the specified values */
         In(arrayOfValues: Date[]): IExpression;
-        
+
         // string overloads
-        
+
         /** Checks whether the value of the field is equal to the specified value.
             The datetime value should be defined in ISO 8601 format! */
         EqualTo(value: string): IExpression;
@@ -337,7 +337,7 @@ module CamlBuilder {
     export interface ILookupMultiFieldExpression {
         /** Checks a condition against every item in the multi lookup value */
         IncludesSuchItemThat(): ILookupFieldExpression;
-        
+
         /** Checks whether the field values collection is empty */
         IsNull(): IExpression;
         /** Checks whether the field values collection is not empty */
@@ -561,7 +561,7 @@ module CamlBuilder {
         }
         private builder: Builder;
         private originalView: ViewInternal;
- 
+
         Finalize() {
             if (this.joins.length > 0) {
                 this.builder.WriteStart("Joins");
@@ -1530,7 +1530,6 @@ module CamlBuilder {
     }
 }
 
-
 // -------------------- Dependencies ------------------
 
 if (typeof (window["Sys"]) == "undefined" || window["Sys"] == null) {
@@ -1746,3 +1745,10 @@ if (typeof window["SP"] == 'undefined') {
         }
     };
 }
+
+// -------------------- Exports ------------------
+if (typeof window !== "undefined"){
+    window["CamlBuilder"] = CamlBuilder;
+}
+
+export = CamlBuilder;
